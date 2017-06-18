@@ -7,7 +7,7 @@ module.exports = {
     entry: __dirname + "/app/main.js", //入口文件路径
     output: {
         path: __dirname + "/build/", //存放打包后文件的地方路径
-        filename: "bundle.js" //打包后的文件名
+        filename: "[name]-[hash].js" //打包后的文件名
     },
     devServer: {
         port: "9000",
@@ -25,7 +25,10 @@ module.exports = {
             loader: "babel-loader"
         }, {
             test: /\.css$/,
-            loader: 'style-loader!css-loader?modules!postcss-loader' //跟前面相比就在后面加上了 !postcss-loader
+            use: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader?modules!postcss-loader"
+            })
         }]
     },
     plugins: [
@@ -36,6 +39,6 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(), //热加载插件
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("[name]-[hash].css")
     ]
 }
