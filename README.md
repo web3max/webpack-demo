@@ -1,12 +1,6 @@
 ![SpringBride](http://upload-images.jianshu.io/upload_images/6171922-d747406cb169a6d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-最近在学习 Webpack,网上大多数入门教程都是基于 Webpack 1.x 版本的,
-我学习 Webpack 时候是看了 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 
-的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写的非常好,
-不过是基于 Webpack 1.x 版本的,语法上和 Webpack 2.x 有一点不同.我学习时是使用 Webpack 2.6.1 版本,
-所以我就寻思着基于  [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 
-的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写下这篇 Webpack 2.x 的入门实战,
-是我学习 Webpack 的记录.听说 Webpack 3.x 版本快要出了,不得不感叹前端领域发展的真是太快了!
+最近在学习 Webpack,网上大多数入门教程都是基于 Webpack 1.x 版本的,我学习 Webpack 时候是看了 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写的非常好,不过是基于 Webpack 1.x 版本的,语法上和 Webpack 2.x 有一点不同.我学习时是使用 Webpack 2.6.1 版本,所以我就寻思着基于  [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写下这篇 Webpack 2.x 的入门实战,是我学习 Webpack 的记录.听说 Webpack 3.x 版本快要出了,不得不感叹前端领域发展的真是太快了!
 
 ## Webpack 是什么?
 
@@ -1232,11 +1226,9 @@ module.exports = {
 
 ### 缓存
 
-为了加快加载速度,合理的利用缓存是必不可少的.使用缓存的最好方法是
-保证文件名和文件内容是匹配的.内容改变，名称也相应改变.
+为了加快加载速度,合理的利用缓存是必不可少的.使用缓存的最好方法是保证文件名和文件内容是匹配的.内容改变，名称也相应改变.
 
-Webpack 可以把一个哈希值添加到打包文件的文件名中,添加特殊的字符串混合体
-([name], [id] and [hash])到输出文件名前,便于修改 BUG 以后,对应更新用户本地的缓存文件.
+Webpack 可以把一个哈希值添加到打包文件的文件名中,添加特殊的字符串混合体([name], [id] and [hash])到输出文件名前,便于修改 BUG 以后,对应更新用户本地的缓存文件.
 
 编辑 webpack.config.js 文件修改 output / plugins 选项.编辑后的文件如下:
 
@@ -1302,8 +1294,7 @@ module.exports = {
 
 ## 进阶,永不止步
 
-其实到这里我的这篇 Webpack 2.x 的入门实战已经完结了!但这也只是个入门而已!在实际项目中运用还是不够的,还有很多细节我并没深入讲,
-所以大家还想进阶的话建议好好去看看 [**webpack-china**](https://doc.webpack-china.org/) 的文档.
+其实到这里我的这篇 Webpack 2.x 的入门实战已经完结了!但这也只是个入门而已!在实际项目中运用还是不够的,还有很多细节我并没深入讲,所以大家还想进阶的话建议好好去看看 [**webpack-china**](https://doc.webpack-china.org/) 的文档.
 
 另外实战项目 [**webpack-demo 的源码**](https://github.com/longhuicode/webpack-demo),我已经放到 Github 上去了,欢迎大家提意见.
 
@@ -1311,7 +1302,4 @@ module.exports = {
 
 ## 鸣谢
 
-这篇 Webpack 2.x 的入门实战是基于 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 
-的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写出来的,是我学习 Webpack 的实战记录.
-特别感谢 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 付出,如果你觉得这篇文章对你有帮助,
-请转到 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 为他点个赞.
+这篇 Webpack 2.x 的入门实战是基于 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写出来的,是我学习 Webpack 的实战记录.特别感谢 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 付出,如果你觉得这篇文章对你有帮助,请转到 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 为他点个赞.
