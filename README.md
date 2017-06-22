@@ -1,6 +1,6 @@
 ![SpringBride](http://upload-images.jianshu.io/upload_images/6171922-d747406cb169a6d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-最近在学习 Webpack,网上大多数入门教程都是基于 Webpack 1.x 版本的,我学习 Webpack 时候是看了 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写的非常好,不过是基于 Webpack 1.x 版本的,语法上和 Webpack 2.x 有一点不同.我学习时是使用 Webpack 2.6.1 版本,所以我就寻思着基于  [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写下这篇 Webpack 2.x 的入门实战,是我学习 Webpack 的记录.听说 Webpack 3.x 版本快要出了,不得不感叹前端领域发展的真是太快了!
+最近在学习 Webpack,网上大多数入门教程都是基于 Webpack 1.x 版本的,我学习 Webpack 的时候是看了 [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门 Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写的非常好,不过是基于 Webpack 1.x 版本的,语法上和 Webpack 2.x 有一点不同.我学习时是使用 Webpack 2.6.1 版本,所以我就寻思着基于  [**zhangwang**](http://www.jianshu.com/u/7091a52ac9e5) 的 [**<<入门 Webpack，看这篇就够了>>**](http://www.jianshu.com/p/42e11515c10f) 写下这篇 Webpack 2.x 的入门实战,是我学习 Webpack 的记录.听说 Webpack 3.x 版本快要出了,不得不感叹前端领域发展的真是太快了!
 
 ## Webpack 是什么?
 
@@ -16,32 +16,23 @@
 
 ![bundle your assets](http://upload-images.jianshu.io/upload_images/6171922-f40a5af399821919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-如果在开发中你遇到了以下问题,那么使用 Webpack 吧!
-- 载入有问题的依赖项
-- 意外引入一些你不需要在生产中用上的 CSS 样式表和 JS 库，使项目膨胀
-- 意外的多次载入库
-- 遇到作用域的问题 (CSS 和 JavaScript 都会有)
-- 寻找一个让你在 JavaScript 中使用 Node/Bower 模块的构建系统，要么就得依靠一个令人发狂的后端配置才能正确地使用这些模块
-- 需要优化资产asset交付，但你担心会弄坏一些东西
-
 对于模块的组织，通常有如下几种方法：
-- 分开写几个 js 文件,使用 script 标签加载
-- CommonJS 进行同步加载, Node.js 就使用这种方式
-- AMD进行异步加载, require.js 使用这种方式
-- 新的 ES6 模块
+- 分开写几个 js 文件,使用 script 标签加载.
+- CommonJS 进行同步加载, Node.js 就使用这种方式.
+- AMD进行异步加载, require.js 使用这种方式.
+- 新的 ES6 模块.
 
 ## Webpack 的特点
 
-- 丰富的插件，流行的插件都有,方便进行开发工作
-- 大量的加载器，便于处理和加载各种静态资源
-- 将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。
-- 发布工具
+- 丰富的插件，流行的插件都有,方便进行开发工作.
+- 大量的加载器，便于处理和加载各种静态资源.
+- 将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载.
 
 ## Webpack 的优势
 
-- Webpack 以 commonJS 的形式来书写脚本，但对 AMD/CMD/ES6 模块 的支持也很全面，方便旧项目进行代码迁移。
+- Webpack 以 commonJS 的形式来书写脚本，但对 AMD / CMD / ES6 模块 的支持也很全面，方便旧项目进行代码迁移。
 - 所有资源都能模块化。
-- 开发便捷，能替代部分 Grunt/Gulp 的工作，比如打包、压缩混淆、图片转 base64、SASS 解析成 CSS 等。
+- 开发便捷，能替代部分 Grunt / Gulp 的工作，比如打包、压缩混淆、图片转 base64、SASS 解析成 CSS 等。
 - 扩展性强，插件机制完善，特别是支持模块热替换（见  [**模块热替换**](http://www.css88.com/doc/webpack2/concepts/hot-module-replacement/) ）的功能让人眼前一亮。
 
 ## Webpack 与 Grunt / Gulp
@@ -58,31 +49,29 @@ Webpack 的工作方式是：把你的项目当做一个整体，通过一个给
 
 ![Webpack](http://upload-images.jianshu.io/upload_images/1031000-160bc667d3b6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-如果实在要进行比较,Webpack  的处理速度更快更直接,因为 Webpack 的历史包袱小.Webpack 还能打包更多不同类型的文件。
+如果实在要进行比较,Webpack 的处理速度更快更直接,因为 Webpack 的历史包袱小.Webpack 还能打包更多不同类型的文件。
 
 ## 开始使用 Webpack
 
 初步了解 Webpack 后，就可以开始学习使用 Webpack。这里会以一个小的 Demo 为例子来一步一步进行动手学习!
 
-### 安装 Webpack
+### 新建 Webpack 项目
+**1.** 新建一个文件夹,命名为 webpack-demo,webpack-demo 就是你的项目名,项目名建议使用小写字母，并且不带空格，不能含有大写字母.
 
-Webpack 可以使用 npm 安装,如果你还不知道 npm 为何物,请 Google,也可以参考 [Node.js 安装配置](http://www.runoob.com/nodejs/nodejs-install-setup.html)和 [NPM 使用介绍](http://www.runoob.com/nodejs/nodejs-npm.html)快速了解、安装 npm.
-
+**2.** 安装 Webpack,Webpack 可以使用 npm 安装,如果你还不知道 npm 为何物,请 Google,也可以参考 [Node.js 安装配置](http://www.runoob.com/nodejs/nodejs-install-setup.html)和 [NPM 使用介绍](http://www.runoob.com/nodejs/nodejs-npm.html)快速了解、安装 npm.
+       
 使用终端在该文件夹中执行下述指令就可以完成安装,由于网络原因安装过程可能需要一些时间。
-
+       
 ```
 //全局安装
 npm install -g webpack
 //安装到你的项目目录
 npm install --save-dev webpack
 ```
+       
+Webpack 可以全局安装,也可以安装到你的项目目录.刚开始学习 Webpack 为了方便,建议同时全局安装和安装到你的项目目录.
 
-Webpack 可以全局安装,也可以安装到你的项目目录.刚开始学习 Webpack 为了方便,建议同时全局安装和安装到你的项目目录..
-
-### 新建 Webpack 项目
-**1.** 新建一个文件夹,命名为 webpack-demo,webpack-demo 就是你的项目名,项目名建议使用小写字母，并且不带空格，不能含有大写字母.
-
-**2.** 在 webpack-demo 文件夹中创建一个 package.json 文件，这是一个标准的 npm 说明文件，里面蕴含了丰富的信息，包括当前项目的依赖模块，自定义的脚本任务等等。在终端中使用 npm init 命令可以自动创建这个 package.json 文件.
+**3.** 在 webpack-demo 文件夹中创建一个 package.json 文件，这是一个标准的 npm 说明文件，里面蕴含了丰富的信息，包括当前项目的依赖模块，自定义的脚本任务等等。在终端中使用 npm init 命令可以自动创建这个 package.json 文件.
 
 ```
 npm init
@@ -90,11 +79,11 @@ npm init
 
 输入这个命令后，终端会问你一系列诸如项目名称,项目版本,项目描述,入口文件,作者等信息，不过不用担心，如果你不准备在 npm 中发布你的模块，这些问题的答案都不重要，回车默认即可.这些信息今后都可以更改 package.json 来修改,所以不用担心.
 
-**3.** 在 webpack-demo 文件夹中创建两个文件夹 app 文件夹和 public 文件夹, app 文件夹用来存放原始数据,例如: SASS 文件、LESS 文件、JavaScript 模块等，public 文件夹用来存放经过 Webpack 处理过的 app 文件夹数据,这也是准备给浏览器读取的数据,其中包括使用 Webpack 打包后的 js 文件等。在这里还需要在 public 文件夹中创建 index.html 文件.在 app 文件夹中创建 Greeter.js 和 main.js 文件，此时项目结构如下图所示:
+**4.** 在 webpack-demo 文件夹中创建两个文件夹 app 文件夹和 public 文件夹, app 文件夹用来存放原始数据,例如: SASS 文件、LESS 文件、JavaScript 模块等，public 文件夹用来存放经过 Webpack 处理过的 app 文件夹数据,这也是准备给浏览器读取的数据,其中包括使用 Webpack 打包后的 js 文件等。在这里还需要在 public 文件夹中创建 index.html 文件.在 app 文件夹中创建 Greeter.js 和 main.js 文件，此时项目结构如下图所示:
 
 ![项目结构](http://upload-images.jianshu.io/upload_images/6171922-cf2a7dd5754319a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-**4.** 在 public 文件夹中的 index.html 文件只有最基础的 html 代码，它唯一的目的就是加载打包后的 js 文件 bundle.js.
+**5.** 在 public 文件夹中的 index.html 文件只有最基础的 html 代码，它唯一的目的就是加载打包后的 js 文件 bundle.js.
 
 
 ```
@@ -117,7 +106,7 @@ npm init
 </html>
 ```
 
-**5.** 在 app 文件夹中的 Greeter.js 只包括一个用来返回问候信息的 html 元素的函数。
+**6.** 在 app 文件夹中的 Greeter.js 只包括一个用来返回问候信息的 html 元素的函数。
 
 ```
 // Greeter.js
@@ -129,7 +118,7 @@ module.exports = function() {
 }
 ```
 
-**6.** 在 app 文件夹中的 main.js 用来把 Greeter 模块(其实可以简单的把它看作 Greeter.js)返回的节点插入页面。
+**7.** 在 app 文件夹中的 main.js 用来把 Greeter 模块(其实可以简单的把它看作 Greeter.js)返回的节点插入页面。
 
 ```
 // main.js
@@ -164,7 +153,7 @@ module.exports = {
 
 ![项目结构](http://upload-images.jianshu.io/upload_images/6171922-ecf9dc2353d4bbe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-可以看出 webpack 同时编译了 main.js 和 Greeter,js,打开 public 目录下的 index.html 文件,就可以看到最终效果,如下图:
+可以看出 webpack 同时编译了 main.js 和 Greeter.js,打开 public 目录下的 index.html 文件,就可以看到最终效果,如下图:
 
 ![最终效果](http://upload-images.jianshu.io/upload_images/6171922-0739951957c32cef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
